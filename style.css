@@ -1,0 +1,599 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Georgia, serif;
+}
+
+body {
+    background-color: #050b14;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: rgba(5, 11, 20, 0.95);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #f3ce72;
+    letter-spacing: 1px;
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-btn {
+    background: transparent;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    color: #d1d5db;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover, .nav-btn.active {
+    border-color: #f3ce72;
+    color: #f3ce72;
+    background: rgba(243, 206, 114, 0.1);
+    box-shadow: 0 0 10px rgba(243, 206, 114, 0.3);
+}
+
+.year-badge {
+    border: 1px solid #f3ce72;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #f3ce72;
+    letter-spacing: 1px;
+}
+
+.main-content {
+    margin-top: 80px;
+}
+
+.page-section {
+    display: none;
+    min-height: calc(100vh - 80px);
+    padding: 40px 5%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.page-section.active {
+    display: flex;
+}
+
+/* 1. BOSH SAHIFA */
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.image-card {
+    border: 2px solid #f3ce72;
+    border-radius: 20px;
+    padding: 8px;
+    box-shadow: 0 0 25px rgba(243, 206, 114, 0.3);
+    max-width: 420px;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.image-card img {
+    width: 100%;
+    border-radius: 15px;
+    display: block;
+}
+
+.content-box {
+    max-width: 650px;
+}
+
+.welcome-subtitle {
+    color: #f3ce72;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.main-title {
+    font-size: 38px;
+    line-height: 1.3;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.quote-box {
+    border-left: 3px solid #f3ce72;
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+.quote-box p {
+    font-style: italic;
+    color: #cbd5e1;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.author-tag {
+    color: #f3ce72;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 35px;
+}
+
+.action-btn {
+    background: linear-gradient(135deg, #d4af37, #f3ce72);
+    color: #050b14;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(243, 206, 114, 0.4);
+    transition: transform 0.2s;
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* 2. SEHRLI SOAT - JOZIBALI DIZAYN */
+.clock-section-title {
+    font-size: 36px;
+    color: #f3ce72;
+    margin-bottom: 8px;
+    text-shadow: 0 0 15px rgba(243, 206, 114, 0.5);
+}
+
+.clock-subtitle {
+    color: #cbd5e1;
+    font-size: 15px;
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
+}
+
+.analog-clock {
+    width: 270px;
+    height: 270px;
+    border: 3px solid rgba(243, 206, 114, 0.8);
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 30px rgba(243, 206, 114, 0.3), inset 0 0 25px rgba(243, 206, 114, 0.15);
+    margin-bottom: 35px;
+    background: radial-gradient(circle, #091926 0%, #030811 100%);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.analog-clock:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 45px rgba(243, 206, 114, 0.6), inset 0 0 35px rgba(243, 206, 114, 0.25);
+}
+
+.clock-number {
+    position: absolute;
+    color: #f3ce72;
+    font-weight: bold;
+    font-size: 14px;
+    text-shadow: 0 0 8px rgba(243, 206, 114, 0.6);
+    transform: translate(-50%, -50%);
+}
+
+.n12 { top: 10%; left: 50%; }
+.n1  { top: 16%; left: 74%; }
+.n2  { top: 30%; left: 87%; }
+.n3  { top: 50%; left: 91%; }
+.n4  { top: 70%; left: 87%; }
+.n5  { top: 84%; left: 74%; }
+.n6  { top: 90%; left: 50%; }
+.n7  { top: 84%; left: 26%; }
+.n8  { top: 70%; left: 13%; }
+.n9  { top: 50%; left: 9%; }
+.n10 { top: 30%; left: 13%; }
+.n11 { top: 16%; left: 26%; }
+
+.hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    border-radius: 4px;
+    transition: transform 0.8s cubic-bezier(0.4, 2.08, 0.55, 0.44);
+}
+
+.hour-hand {
+    width: 6px;
+    height: 65px;
+    margin-left: -3px;
+    background: linear-gradient(to top, #d4af37, #ffffff);
+    transform: rotate(357.5deg);
+    box-shadow: 0 0 10px rgba(243, 206, 114, 0.5);
+}
+
+.minute-hand {
+    width: 3px;
+    height: 95px;
+    margin-left: -1.5px;
+    background: linear-gradient(to top, #f3ce72, #ffffff);
+    transform: rotate(330deg);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+}
+
+.center-dot {
+    width: 14px;
+    height: 14px;
+    background: #ffffff;
+    border: 3px solid #f3ce72;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 15px rgba(243, 206, 114, 1);
+    z-index: 10;
+}
+
+.digital-timer {
+    position: absolute;
+    bottom: 18%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(5, 11, 20, 0.85);
+    border: 1px solid rgba(243, 206, 114, 0.5);
+    padding: 3px 12px;
+    border-radius: 12px;
+    color: #f3ce72;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    box-shadow: 0 0 15px rgba(243, 206, 114, 0.3);
+}
+
+.festive-image-card {
+    border: 2px solid #f3ce72;
+    border-radius: 20px;
+    padding: 8px;
+    box-shadow: 0 0 25px rgba(243, 206, 114, 0.3);
+    max-width: 650px;
+    width: 100%;
+    opacity: 0;
+    transform: scale(0.8) translateY(40px);
+    pointer-events: none;
+    transition: all 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.festive-image-card img {
+    width: 100%;
+    border-radius: 15px;
+    display: block;
+}
+
+.festive-image-card.show-image {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    pointer-events: auto;
+    box-shadow: 0 0 45px rgba(243, 206, 114, 0.9);
+}
+
+/* 3. ORZULAR PORTALI */
+.portal-card {
+    border: 2px solid #f3ce72;
+    border-radius: 25px;
+    background: radial-gradient(circle at center, #0a1f18 0%, #04120c 100%);
+    padding: 40px;
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 0 35px rgba(243, 206, 114, 0.3);
+}
+
+.portal-title {
+    color: #f3ce72;
+    font-size: 30px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.portal-img-container {
+    max-width: 500px;
+    margin: 0 auto 30px auto;
+}
+
+.portal-img-container img {
+    width: 100%;
+    border-radius: 15px;
+    display: block;
+}
+
+.portal-message-box {
+    background: rgba(4, 30, 20, 0.7);
+    border: 1px solid rgba(243, 206, 114, 0.3);
+    border-radius: 15px;
+    padding: 25px 35px;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.portal-message-box p {
+    color: #d1d5db;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.highlight-year {
+    color: #f3ce72;
+    font-weight: bold;
+}
+
+/* 4. BAYRAM SEHRI */
+#bayram-sehri {
+    background-color: #031c12;
+    width: 100%;
+}
+
+.gallery-title {
+    color: #f3ce72;
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(243, 206, 114, 0.3);
+}
+
+.gallery-subtitle {
+    color: #72b08a;
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.gallery-card {
+    border: 2px solid #f3ce72;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(243, 206, 114, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 200px;
+}
+
+.gallery-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(243, 206, 114, 0.5);
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 5. DILDAN TILAKLAR */
+#dildan-tilaklar {
+    background-color: #031c12;
+    width: 100%;
+}
+
+.tilaklar-title {
+    color: #f3ce72;
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(243, 206, 114, 0.3);
+}
+
+.tilaklar-subtitle {
+    color: #72b08a;
+    font-size: 15px;
+    margin-bottom: 50px;
+}
+
+.cards-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.divider-line {
+    width: 1px;
+    height: 240px;
+    background-color: #f3ce72;
+    opacity: 0.6;
+}
+
+.card-container {
+    width: 260px;
+    height: 280px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d;
+}
+
+.card-container:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}
+
+.card-front {
+    background-color: #042417;
+    border: 2px solid #f3ce72;
+    color: #f3ce72;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(243, 206, 114, 0.2);
+}
+
+.card-back {
+    background-color: #042417;
+    border: 2px solid #4ade80;
+    color: #ffffff;
+    transform: rotateY(180deg);
+    box-shadow: 0 0 20px rgba(74, 222, 128, 0.4);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN (Barcha ekranlar uchun moslashuvchanlik)
+   ========================================== */
+
+/* Planshetlar va kichik noutbuklar uchun (1024px dan kichik) */
+@media screen and (max-width: 1024px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .quote-box {
+        border-left: none;
+        border-top: 3px solid #f3ce72;
+        padding-left: 0;
+        padding-top: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 500px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cards-wrapper {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .divider-line {
+        width: 150px;
+        height: 1px;
+    }
+}
+
+/* Telefonlar uchun (768px dan kichik ekranlar) */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 12px 15px;
+        gap: 10px;
+        position: relative;
+    }
+
+    .main-content {
+        margin-top: 20px; /* Header balandligi o'zgargani uchun */
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .nav-btn {
+        padding: 6px 10px;
+        font-size: 10px;
+    }
+
+    .year-badge {
+        display: none; /* Telefon ekranida joy tejalishi uchun yashiriladi */
+    }
+
+    .main-title {
+        font-size: 26px;
+    }
+
+    .clock-section-title, .gallery-title, .tilaklar-title {
+        font-size: 26px;
+    }
+
+    .analog-clock {
+        width: 230px;
+        height: 230px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Rasmlar bittadan ustma-ust tushadi */
+    }
+
+    .portal-card {
+        padding: 20px 15px;
+    }
+
+    .portal-title {
+        font-size: 22px;
+    }
+
+    .card-container {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+/* FOOTER - Pastki qism dizayni */
+footer {
+    background-color: #030811;
+    color: #f3ce72;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid rgba(243, 206, 114, 0.2);
+    font-size: 14px;
+    letter-gap: 1px;
+    box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 100;
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yangi Yil Shukuhi - 2027</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigatsiya -->
+    <header>
+        <div class="logo">Yangi Yil Shukuhi</div>
+        <nav>
+            <button class="nav-btn active" onclick="switchTab('bosh-sahifa')">BOSH SAHIFA</button>
+            <button class="nav-btn" onclick="switchTab('sehrli-soat')">SEHRLI SOAT</button>
+            <button class="nav-btn" onclick="switchTab('orzular-portali')">ORZULAR VA KELAJAK PORTALI</button>
+            <button class="nav-btn" onclick="switchTab('bayram-sehri')">BAYRAM SEHRI</button>
+            <button class="nav-btn" onclick="switchTab('dildan-tilaklar')">DILDAN TILAKLAR</button>
+        </nav>
+        <div class="year-badge">YANGI YIL 2027</div>
+    </header>
+
+    <main class="main-content">
+        <!-- 1. BOSH SAHIFA -->
+        <section id="bosh-sahifa" class="page-section active">
+            <div class="hero-container">
+                <div class="image-card">
+                    <img src="Qorbobo va Qoriqz Tabrigi.jpg" alt="Qorbobo va Qorqiz">
+                </div>
+                <div class="content-box">
+                    <div class="welcome-subtitle">✦ XUSH KELIBSIZ ✦</div>
+                    <h1 class="main-title">Kirib Kelgan 2027-Yil Bilan Barchangizni Chin Dildan Qutlaymiz</h1>
+                    <div class="quote-box">
+                        <p>"Assalomu alaykum, Yangi 2027-yil muborak bo'lsin! Uyingizdan fayz-u baraka, yuzingizdan tabassum va qalbingizdan mehr-muhabbat hech qachon arimasin"</p>
+                    </div>
+                    <div class="author-tag">🎅 QORBOBO VA QORQIZ TILAKLARI BILAN ❄️</div>
+                    <button class="action-btn" onclick="switchTab('sehrli-soat')">✨ SEHRLI SOAT PORTALIGA O'TISH ✨</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. SEHRLI SOAT -->
+        <section id="sehrli-soat" class="page-section">
+            <h2 class="clock-section-title">✦ Bayram Quvonchi ✦</h2>
+            <p class="clock-subtitle">Tugmani bosing va 2027-yil mo'jizasini kutib oling</p>
+
+            <div class="analog-clock">
+                <div class="clock-number n12">12</div>
+                <div class="clock-number n1">1</div>
+                <div class="clock-number n2">2</div>
+                <div class="clock-number n3">3</div>
+                <div class="clock-number n4">4</div>
+                <div class="clock-number n5">5</div>
+                <div class="clock-number n6">6</div>
+                <div class="clock-number n7">7</div>
+                <div class="clock-number n8">8</div>
+                <div class="clock-number n9">9</div>
+                <div class="clock-number n10">10</div>
+                <div class="clock-number n11">11</div>
+                
+                <div class="hand hour-hand" id="hourHand"></div>
+                <div class="hand minute-hand" id="minuteHand"></div>
+                <div class="center-dot"></div>
+                
+                <div class="digital-timer" id="digitalTimer">23:55</div>
+            </div>
+
+            <!-- Bong urganda chiqadigan rasm -->
+            <div class="festive-image-card" id="festiveCard">
+                <img src="bolalar.jpg" alt="Bolalar sovg'alarni ochmoqda">
+            </div>
+        </section>
+
+        <!-- 3. ORZULAR VA KELAJAK PORTALI -->
+        <section id="orzular-portali" class="page-section">
+            <div class="portal-card">
+                <h2 class="portal-title">✦ Orzular va Kelajak Portali: 2027-Yil Maqsadlari ✦</h2>
+                
+                <div class="portal-img-container">
+                    <img src="portal-logo.png" alt="Sehrli Portal">
+                </div>
+
+                <div class="portal-message-box">
+               <p>Sehrli portal halqalari bo'ylab taralayotgan nur singari, yangi 2027-yil  ham yo'llaringizni yoritib, barcha ezgu niyatlaringiz ro'yobga chiqadigan mo'jizaviy yilga aylansin!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. BAYRAM SEHRI -->
+        <section id="bayram-sehri" class="page-section">
+            <h2 class="gallery-title">Mo'jizaviy Galereya 2027</h2>
+            <p class="gallery-subtitle">Sehrli onlardan bahramand bo'ling</p>
+
+            <div class="gallery-grid">
+                <div class="gallery-card"><img src="galereya1.jpg" alt="Archa"></div>
+                <div class="gallery-card"><img src="galereya2.jpg" alt="Qorli Uy"></div>
+                <div class="gallery-card"><img src="galereya3.jpg" alt="Sovg'alar"></div>
+                <!-- Skrinshotingizdagi 'gelereya4.jpg' nomi bilan to'g'rilandi -->
+                <div class="gallery-card"><img src="gelereya4.jpg" alt="Chiroqlar"></div>
+            </div>
+        </section>
+
+        <!-- 5. DILDAN TILAKLAR -->
+        <section id="dildan-tilaklar" class="page-section">
+            <h2 class="tilaklar-title">Dildan Tilaklar 2027</h2>
+            <p class="tilaklar-subtitle">Yangi yil uchun eng samimiy tabriklar (Otkritkani bosing yoki sichqonchani olib boring)</p>
+
+            <div class="cards-wrapper">
+                <div class="card-container">
+                    <div class="card-inner">
+                        <div class="card-front">✨ 1-Tilak / Otkritka</div>
+                        <div class="card-back">"Yangi 2027-yilda xonadoningizga tinchlik, mustahkam sog'liq va bitmas-tuganmas quvonch hamrohingiz bo'lsin!"</div>
+                    </div>
+                </div>
+
+                <div class="divider-line"></div>
+
+                <div class="card-container">
+                    <div class="card-inner">
+                        <div class="card-front">🎄 2-Tilak / Otkritka</div>
+                        <div class="card-back">"Barcha ezgu orzularingiz yangi yilda o'z ta'rifini topib, ro'yobga chiqsin!"</div>
+                    </div>
+                </div>
+
+                <div class="divider-line"></div>
+
+                <div class="card-container">
+                    <div class="card-inner">
+                        <div class="card-front">🎄 3-Tilak / Otkritka</div>
+                        <div class="card-back">"Kelayotgan yangi yil sizga yangi imkoniyatlar, ulkan zafarlar va unutilmas sehrli damlarni olib kelsin!"</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!-- Footer (Pastki qism) -->
+    <footer>
+        <p>© 2027 Yangi Yil Shukuhi. Barcha huquqlar himoyalangan. ✨</p>
+    </footer>
